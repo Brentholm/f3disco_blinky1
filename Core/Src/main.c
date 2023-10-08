@@ -113,7 +113,29 @@ int main(void)
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_SET);  //orange, LD8
   HAL_Delay(100);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_15, GPIO_PIN_SET);  //green, LD6
+
+
+  HAL_Delay(500);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);  //blue, LD4
   HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);  //red, LD3
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_10); //orange, LD5
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_11);  //green, LD7
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);  //blue, LD9
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_13); //red, LD10
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_14);  //orange, LD8
+  HAL_Delay(100);
+  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_15);  //green, LD6
+  HAL_Delay(100);
+
+  USART1_SendString("Hello, World!\r\n");
+
+  printf("Hi Brent\r\n");
 
 
 
@@ -123,32 +145,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+	  /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-	  /*HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);  //blue, LD4
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);  //red, LD3
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_10); //orange, LD5
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_11);  //green, LD7
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);  //blue, LD9
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_13); //red, LD10
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_14);  //orange, LD8
-	  HAL_Delay(100);
-	  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_15);  //green, LD6
-	  HAL_Delay(100);*/
-
-	  //USART1_SendString("Hello, World!\r\n");
-
-	  //printf("Hi Brent\r\n");
-
-
-
+	  /* USER CODE BEGIN 3 */
 
 	  int ch;
 
@@ -156,9 +155,6 @@ int main(void)
 	  while ((ch = my_getchar()) != EOF) {
 		  __io_putchar(ch); // Print the character received
 	  }
-
-
-
 
 
   }
