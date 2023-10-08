@@ -115,7 +115,7 @@ int main(void)
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_15, GPIO_PIN_SET);  //green, LD6
 
 
-  HAL_Delay(500);
+  HAL_Delay(2500);
   HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);  //blue, LD4
   HAL_Delay(100);
   HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);  //red, LD3
