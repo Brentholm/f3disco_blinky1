@@ -98,7 +98,8 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   //turn on the LED's one at a time in clockwise fashion
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_8, GPIO_PIN_SET);  //blue, LD4
+#define LD4_Blue_NW (GPIO_PIN_8)
+  HAL_GPIO_WritePin(GPIOE, LD4_Blue_NW, GPIO_PIN_SET);  //blue, LD4
   HAL_Delay(100);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_SET);  //red, LD3
   HAL_Delay(100);
