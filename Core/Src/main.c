@@ -99,9 +99,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   //turn on the LED's one at a time in clockwise fashion
 #define LD4_Blue_NW (GPIO_PIN_8)
+#define LD3_Red_N 	(GPIO_PIN_9)
   HAL_GPIO_WritePin(GPIOE, LD4_Blue_NW, GPIO_PIN_SET);  //blue, LD4
   HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_9, GPIO_PIN_SET);  //red, LD3
+  HAL_GPIO_WritePin(GPIOE, LD3_Red_N, GPIO_PIN_SET);  //red, LD3
   HAL_Delay(100);
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_SET); //orange, LD5
   HAL_Delay(100);
