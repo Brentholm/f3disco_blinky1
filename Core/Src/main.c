@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
+#include "LedRelated.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,43 +98,12 @@ int main(void)
   MX_USB_PCD_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  //turn on the LED's one at a time in clockwise fashion
-#define LD4_Blue_NW (GPIO_PIN_8)
-#define LD3_Red_N 	(GPIO_PIN_9)
-  HAL_GPIO_WritePin(GPIOE, LD4_Blue_NW, GPIO_PIN_SET);  //blue, LD4
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, LD3_Red_N, GPIO_PIN_SET);  //red, LD3
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_SET); //orange, LD5
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_11, GPIO_PIN_SET);  //green, LD7
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_SET);  //blue, LD9
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_13, GPIO_PIN_SET); //red, LD10
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_14, GPIO_PIN_SET);  //orange, LD8
-  HAL_Delay(100);
-  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_15, GPIO_PIN_SET);  //green, LD6
 
+  LedRoseSet();
+  LedRoseToggle();
 
   HAL_Delay(2500);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8);  //blue, LD4
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_9);  //red, LD3
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_10); //orange, LD5
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_11);  //green, LD7
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_12);  //blue, LD9
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_13); //red, LD10
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_14);  //orange, LD8
-  HAL_Delay(100);
-  HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_15);  //green, LD6
-  HAL_Delay(100);
+
 
   USART1_SendString("Hello, World!\r\n");
 
