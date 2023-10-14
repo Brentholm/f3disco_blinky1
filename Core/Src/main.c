@@ -100,13 +100,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   LedRoseSet();
+  HAL_Delay(50);
   LedRoseToggle();
-
-  HAL_Delay(2500);
 
 
   USART1_SendString("Hello, World!\r\n");
-
   printf("Hi Brent\r\n");
 
 
@@ -121,12 +119,26 @@ int main(void)
 
 	  /* USER CODE BEGIN 3 */
 
-	  int ch;
 
-	  // Call my_getchar to read characters interactively
+
+	 /*  Call my_getchar to read characters interactively
+	  int ch;
 	  while ((ch = my_getchar()) != EOF) {
-		  __io_putchar(ch); // Print the character received
+	    __io_putchar(ch); // Print the character received
+	  }*/
+	  //this Disco board has 8 user LED's...
+	  //blink one LED, toggling every 200 ms
+	  //and every time through loop, check state of blue user button and light LED8 if it's pressed
+	  //no debounce yet, no interrupts
+	  if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0)) {
+		  HAL_GPIO_WritePin(GPIOE, LD8_Orange_SW, 1);
 	  }
+	  else {
+		  HAL_GPIO_WritePin(GPIOE, LD8_Orange_SW, 0);
+	  }
+	  HAL_GPIO_TogglePin(GPIOE, LD4_Blue_NW);  //blue, LD4
+	  HAL_Delay(200);
+
 
 
   }
